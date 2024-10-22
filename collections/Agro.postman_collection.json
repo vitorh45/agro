@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "1cdc760e-afb4-497f-899a-c88f6055f9af",
+		"name": "Agro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20746278"
+	},
+	"item": [
+		{
+			"name": "Create a farmer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cpf_cnpj\": \"57698266000178\",\n    \"name\": \"Fazendeiro 123\",\n    \"farm_name\": \"Fazenda LOTR\",\n    \"city\": \"Joao Pessoa\",\n    \"state\": \"PB\",\n    \"total_area\": 100,\n    \"agricultural_area\": 40,\n    \"vegetation_area\": 50,\n    \"farming_options\": [\"SUGARCANE\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/farmers",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"farmers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List farmers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/farmers?limit=4&offset=2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"farmers"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "4"
+						},
+						{
+							"key": "offset",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a farmer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/farmers?cpf_cnpj=00100200304",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"farmers"
+					],
+					"query": [
+						{
+							"key": "cpf_cnpj",
+							"value": "00100200304"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a farmer",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Fazendeiro 123\",\n    \"farm_name\": \"Fazenda LOTR\",\n    \"city\": \"Joao Pessoa\",\n    \"state\": \"PB\",\n    \"total_area\": 100,\n    \"agricultural_area\": 40,\n    \"vegetation_area\": 50,\n    \"farming_options\": [\"SUGARCANE\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/farmers?cpf_cnpj=00100200304",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"farmers"
+					],
+					"query": [
+						{
+							"key": "cpf_cnpj",
+							"value": "00100200304"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
