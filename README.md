@@ -7,7 +7,8 @@
  - Installation and usage
  - Endpoints
  - Tests
- - Live version 
+ - Live version
+ - Postman collections
 
 ## Introduction
 
@@ -82,3 +83,7 @@ To check all the endpoints and request data, access the online documentation. Co
 ## Live version
 
 There a version deployed on Render.com. The base url is `https://agro-qxlx.onrender.com` and the swagger docs is `https://agro-qxlx.onrender.com/docs/swagger`. It's a small instance. Use it smart for simple tests purpose.
+
+
+## Postman collections
+There four files with Postman collection of requests and environments to test the requests locally with and without docker and the current live version. Import the files inside the Postman.
