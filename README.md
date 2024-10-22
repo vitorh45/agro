@@ -7,6 +7,7 @@
  - Installation and usage
  - Endpoints
  - Tests
+ - Live version 
 
 ## Introduction
 
@@ -65,12 +66,19 @@ Now that the project is running locally in the address http://localhost:5000 (or
     "farming_options": ["SUGARCANE"]
 }
 ```
+- GET /api/v1/farmers?limit=1&offset=1: To list all farmers. Accepts two parameters `limit` to limit the amount of items returned and `offset` to combine with `limit` and paginate the result in case of o great amount of items.
 
 ### Responses
 - 200: if the request is successfull
-- 401: if you try to authenticate with invalid credentials
-- 403: if you try to access and endpoint with divergence between the token and endpoint role
+- 201: if the creation request is successfull
+- 400: general error. Examples: invalid `cpf_cnpj` in farmer creation. Wrong fields values in request body on farmer creation on update. Duplicated `cpf_cnpj` when creating a farmer.
+- 404: if you try update or delete a farmer with an invalid `cpf_cnpj`
 
 ## Tests
 
 To check all the endpoints and request data, access the online documentation. Consider you are running locally, access the endpoint `http://localhost:5000/docs/swagger`
+
+
+## Live version
+
+There a version deployed on Render.com. The base url is `https://agro-qxlx.onrender.com` and the swagger docs is `https://agro-qxlx.onrender.com/docs/swagger`. It's a small instance. Use it smart for simple tests purpose.
